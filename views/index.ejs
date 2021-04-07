@@ -19,13 +19,16 @@
         </section>
         <section class="toDo">
             <ul> <!--todo-list-->
-                <li> <!--todo-list-item-->
-                   <div class="todo-list-item">Example Text</div>
-                   <div class="ed">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
-                    </div>
-                </li>
+                <% todoList.forEach(details => { %>
+                    <li>
+                        <!--todo-list-item-->
+                        <div class="todo-list-item"><%= details.content %></div>
+                        <div class="ed">
+                            <a href="/edit/<%= details._id %>"><button class="edit">Edit</button></a>
+                            <a href="/remove/<%= details.id %>"><button class="delete">Delete</button></a>
+                        </div>
+                    </li>
+               <% }) %>
             </ul>
         </section>
         <section class="complete"></section>
